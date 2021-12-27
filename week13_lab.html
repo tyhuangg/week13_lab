@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel = "stylesheet" type="text/css" href="style_of_calculator.css">
+</head>
+<body>
+	<div class = "button" align="center">
+	<form action = "#">
+	
+		<h1>JS calculator</h1><br>
+
+	<h3>Number 1</h3>
+	<input id = "number1">
+	<h3>Number 2</h3>
+	<input id = "number2">
+	<h3>Operate way?</h3>
+	<select id = "list" class ="droplist" onchange = "setButton(this.value)">
+			<option value="plus" >+</option>
+			<option value="minus" >-</option>
+			<option value="product" >*</option>
+			<option value="divide" >/</option>
+		</select>
+
+	<p><button value="Go" id="button" onclick="run()">Add</button></p>
+	<p><h3>Result = </h3><input type="text" id="result" class="result"></p>
+
+	</div>
+
+	</form>
+
+	<script type="text/javascript">
+		
+		function run(){
+			var num1 = document.getElementById("number1").value;
+			var num2 = document.getElementById("number2").value;
+			var select = document.getElementById("list").value;
+
+			if(select == "plus"){
+				document.getElementById("result").value = Number(num1) + Number(num2);
+				document.getElementById("button").innerText = "Add";
+			} else if (select == "minus") {
+				document.getElementById("result").value = Number(num1) - Number(num2);
+				document.getElementById("button").innerText = "Minus";
+			} else if (select == "product"){
+				document.getElementById("result").value = Number(num1) * Number(num2);
+				document.getElementById("button").innerText = "Product";
+			} else{
+				document.getElementById("result").value = Number(num1)/Number(num2);
+				document.getElementById("button").innerText = "Divide";
+			}
+		}
+		
+	</script>
+
+	
+</div>
+</body>
+</html>
